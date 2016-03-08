@@ -4,30 +4,29 @@
 	text-decoration: none !important;
 }
 .sl-button {
-	padding: 0.375em 0.625em;
 	font-size: 1em;
 	line-height: 1;
 	font-weight: normal;
+  color: #EC1C2D;
 }
 
 /* Colors */
-a.liked {
-	color: #da1b1b;
+.sl-button.sl-button {
+  color: #EC1C2D;
 }
-a.liked:hover,
-a.liked:active,
-a.liked:focus {
-	color: #666666;
+.sl-button.sl-button:hover,
+.sl-button.sl-button:active,
+.sl-button.sl-button:focus {
+	color: #FFF;
 }
-a.liked span.sl-count,
+a.liked.liked span.sl-count,
 .sl-count {
-	color: #666666;
+	color: #FFF;
 }
 
 /* Icon */
 .sl-icon {
 	margin-right: 0.3125em;
-	font-family: 'Arial Unicode MS', Arial, sans-serif;
 	vertical-align: middle;
 }
 .sl-icon svg {
@@ -46,10 +45,11 @@ a.liked span.sl-count,
 
 /* Count */
 .sl-count {
-	font-size: 0.625em;
-	font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 14px;
+  display: inline-block;
+  line-height: 16px;
+  margin-left: 6px;
 	text-transform: uppercase;
-	vertical-align: middle;
 }
 
 /* Loader */

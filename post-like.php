@@ -34,8 +34,7 @@ class CA_Post_Like_System {
 
     public function __construct() {}
 
-    public function load_language( $domain )
-    {
+    public function load_language( $domain ) {
         load_plugin_textdomain(
             $domain,
             FALSE,
@@ -90,6 +89,12 @@ class CA_Post_Like_System {
          */
         add_action( 'show_user_profile', array( &$this, 'show_user_likes' ) );
         add_action( 'edit_user_profile', array( &$this, 'show_user_likes' ) );
+
+        /**
+         * Add number of likes in Editor's Pick sidebar
+         * @since    0.6
+         */
+        add_action( 'ca_after_editors_pick_sidebar_title', array( &$this, 'render_simple_likes_button' ), 10, 1 );
     }
 
 
@@ -309,6 +314,11 @@ class CA_Post_Like_System {
     function sl_shortcode() {
         return $this->get_simple_likes_button( get_the_ID(), 0 );
     } // shortcode()
+
+
+    function render_simple_likes_button( $post_id, $is_comment = NULL ) {
+        echo $this->get_simple_likes_button( $post_id, $is_comment );
+    }
 
 
     /**
