@@ -15,7 +15,7 @@
 		if (post_id !== '') {
 			$.ajax({
 				type: 'POST',
-				url: simpleLikes.ajaxurl,
+				url: BOX.simpleLikes.ajaxurl,
 				data : {
 					action : 'process_simple_like',
 					post_id : post_id,
@@ -30,15 +30,15 @@
 					var count = response.count;
 					allbuttons.html(icon+count);
 					if(response.status === 'unliked') {
-						var like_text = simpleLikes.like;
+						var like_text = BOX.simpleLikes.like;
 						allbuttons.prop('title', like_text);
 						allbuttons.removeClass('liked');
 					} else {
-						var unlike_text = simpleLikes.unlike;
+						var unlike_text = BOX.simpleLikes.unlike;
 						allbuttons.prop('title', unlike_text);
 						allbuttons.addClass('liked');
 					}
-					loader.empty();					
+					loader.empty();
 				}
 			});
 			
